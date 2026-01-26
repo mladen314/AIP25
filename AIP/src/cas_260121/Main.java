@@ -25,6 +25,9 @@ public class Main {
 		System.out.println("Janko".compareTo("Anastasija"));
 		ime = ime.replace("o", "a");
 		System.out.println(ime);
+		String izraz = "123*45";
+		System.out.println(izraz.substring(4));
+		System.out.println(izraz.substring(0,3));
 		
 	}
 
