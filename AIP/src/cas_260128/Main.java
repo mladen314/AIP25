@@ -12,6 +12,7 @@ public class Main {
 		String s = input.nextLine();
 		
 		System.out.println(br_samoglasnika(s));
+		System.out.println(naopako(s));
 
 	}
 	
@@ -41,7 +42,12 @@ public class Main {
 	 */
 	
 	public static String naopako(String s) {
+		String pom=s.substring(s.length()-1);
 		
+		for(int i=s.length()-2; i>=0;i--) {
+			pom=pom+s.charAt(i);
+		}
+		return pom;
 	}
 	
 	
