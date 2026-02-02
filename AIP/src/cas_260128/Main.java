@@ -8,11 +8,13 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Unijeti izraz");
+		System.out.println("Unijeti string");
 		String s = input.nextLine();
 		
 		System.out.println(br_samoglasnika(s));
 		System.out.println(naopako(s));
+		System.out.println(je_palindrom(s));
+		System.out.println(broj_rijeci(s));
 
 	}
 	
@@ -56,10 +58,30 @@ public class Main {
 	 * Npr. za "radar" vraca true
 	 */
 	
+	public static boolean je_palindrom(String s) {
+		String pom = naopako(s);
+		
+		if(s.equalsIgnoreCase(pom)) {
+			return true;
+		}
+		
+		return false;
+	}
 	
 	
 	/*
 	 * Vraca broj rijeci u stringu (recenici)
 	 */
+	
+	public static int broj_rijeci(String s) {
+		int br=1;
+		
+		for(int i=0;i<s.length(); i++) {
+			if(s.charAt(i)==' ') {
+				br++;
+			}
+		}
+		return br;
+	}
 
 }
