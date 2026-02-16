@@ -1,15 +1,23 @@
 package cas_260204_01;
 
+import java.util.Random;
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] niz = {5, 10, 28, 12, 26, 32, 42};
 		
+		Random rand = new Random();
+		System.out.println(rand.nextInt(100-80)+80);
+		
+		
+		int [] niz = popuni_niz(20);
+		stampa_niz(niz);
+		
+		System.out.println(niz[0]);
 		
 		System.out.println(je_u_nizu(28, niz));
 		
-		Math.random(); // vraca slucajan broj iz intervala od 0 do 1
 
 	}
 	/*
@@ -22,7 +30,32 @@ public class Main {
 			m=n;
 			n=p;
 		}
+		//Math.random();  vraca slucajan broj iz intervala od 0 do 1
+		return (int)(Math.random()*(n-m))+m;
 		
+	}
+	
+	/*
+	 * Funkcije popunjava niz
+	 */
+	public static int [] popuni_niz(int n) {
+		int [] niz = new int[n];
+		
+		for (int i=0; i<niz.length; i++) {
+			niz[i] = slucajan_broj(10, 100);
+		}
+		return niz;
+	}
+	
+	/*
+	 * Funkcija koja stampa niz
+	 */
+	
+	public static void stampa_niz(int [] niz) {
+		for (int element : niz) {
+			System.out.print(element+" ");
+		}
+		System.out.println();
 	}
 	
 	
