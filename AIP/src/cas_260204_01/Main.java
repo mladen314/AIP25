@@ -17,6 +17,7 @@ public class Main {
 		System.out.println(niz[0]);
 		
 		System.out.println(je_u_nizu(28, niz));
+		System.out.println(max_el_niza(niz));
 		
 
 	}
@@ -79,6 +80,20 @@ public class Main {
 			}
 		}
 		return false;
+	}
+	
+	/*
+	 * Vraca najveci element u nizu
+	 */
+	
+	public static int max_el_niza(int[]niz) {
+		int max=0;
+		for (int i = 0; i < niz.length; i++) {
+			if(niz[max]<niz[i]) {
+				max=i;
+			}
+		}
+		return niz[max];
 	}
 
 }
