@@ -19,6 +19,8 @@ public class Main {
 		System.out.println(je_u_nizu(28, niz));
 		System.out.println(max_el_niza(niz));
 		
+		System.out.println("Suma elemenata niza je " + suma_el(niz));
+		
 
 	}
 	/*
@@ -94,6 +96,18 @@ public class Main {
 			}
 		}
 		return niz[max];
+	}
+	
+	/*
+	 * Vraca sumu elemenata niza
+	 */
+	public static int suma_el(int niz[]) {
+		int suma = 0;
+		for (int element : niz) {
+			suma = suma + element;
+		}
+		return suma;
+		
 	}
 
 }
