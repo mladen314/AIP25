@@ -21,6 +21,14 @@ public class Main {
 		
 		System.out.println("Suma elemenata niza je " + suma_el(niz));
 		
+		parni_br_niza(niz);
+		
+		int [] pom = {1,2,3,4,5,6};
+		int [] treci = treci_niz(niz,pom);
+		stampa_niz(treci);
+		
+		System.out.println(najvise_ponavljanja(niz));
+		
 
 	}
 	/*
@@ -109,5 +117,68 @@ public class Main {
 		return suma;
 		
 	}
+	
+	/*
+	 * Stampa parne brojeve iz niza 
+	 */
+	
+	public static void parni_br_niza(int niz[]) {
+		System.out.print("Parni brojevi niza su: ");
+		for (int broj : niz) {
+			if (broj%2==0) {
+				System.out.print(broj + " ");
+			}
+			
+		}
+		System.out.println();
+	}
+	
+	
+	
+	/*
+	 * Od dva niza pravi treci niz 
+	 * koji nastaje nadovezivanjem prva dva niza
+	 */
+	
+	
+	public static int[] treci_niz(int []niz1, int []niz2) {
+		int [] treci = new int [niz1.length + niz2.length];
+		
+		for (int i = 0; i < niz1.length; i++) {
+			treci[i] = niz1[i];
+		}
+		
+		for (int i = 0; i < niz2.length; i++) {
+			treci[niz1.length + i] = niz2[i];
+		}
+		return treci;
+		
+	}
+	
+	
+	/*
+	 * Vraca element niza koji se navise puta pojavljuje
+	 * ukoliko ih je vise sa istim brojem ponavljanja vraca
+	 * onaj koji se prvi pojavljuje u nizu
+	 */
+	
+	public static int najvise_ponavljanja(int[] niz) {
+		int pon_max=0;
+		int index=0;
+		for (int i = 0; i < niz.length; i++) {
+			int pon=0;
+			for (int j = i; j < niz.length; j++) {
+				if(niz[i]==niz[j]) {
+					pon++;
+				}
+			}
+			if(pon>pon_max) {
+				index=i;
+				pon_max=pon;
+			}
+		}
+		return niz[index];
+	}
+	
 
 }
