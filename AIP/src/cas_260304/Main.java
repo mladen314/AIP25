@@ -38,21 +38,29 @@ public class Main {
 		}
 		
 		osobe.set(1, "Biga");
+		
+		System.out.println(osobe);
+		
+		popuni_listu(osobe);
 		System.out.println(osobe);
 
 	}
 	
 	/*
-	 * Napisati program koji unosi imena dko se ne unese KRAJ
+	 * Napisati program koji unosi imena dok se ne unese KRAJ
 	 * Nakon zavrsetka unosa ispisati listu
 	 */
 	
 	public static void popuni_listu(ArrayList <String> osobe) {
 		Scanner input = new Scanner(System.in);
 		String ime;
+		ime = input.nextLine();
 		do {
-			
+			osobe.add(ime);
+			ime = input.nextLine();
 		}while(!ime.equalsIgnoreCase("kraj"));
+		
+		input.close();
 	}
 
 }
