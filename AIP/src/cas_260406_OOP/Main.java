@@ -7,9 +7,14 @@ public class Main {
 		
 		Osobe a = new Osobe(123456789, "Marko", "Markovic", 2000);
 		Osobe b = new Osobe(987654321, "Zarko", "Zarkovic", 2005);
+		Osobe c = new Osobe();
 		
-		System.out.println(a.ime + " " + a.prezime);
-
+		System.out.println(c.getIme());
+		c.setIme("Anastasija");
+		System.out.println(c.getIme());
+		
+		
 	}
+	
 
 }
