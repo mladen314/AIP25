@@ -52,7 +52,11 @@ public class Osobe {
 	 */
 	
 	public boolean jeStariji(Osobe x) {
+		if(this.godine_rodjenja<x.godine_rodjenja) {
+			return true;
+		}
 		
+		return false;
 	}
 	
 	
